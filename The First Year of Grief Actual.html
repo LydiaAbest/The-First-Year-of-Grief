@@ -33,12 +33,12 @@ PAL 1
 PAL 2
 0,0,0
 255,255,255
-247,246,255
+254,255,240
 
 PAL 3
 0,0,0
 255,255,255
-250,255,254
+255,255,255
 
 PAL 4
 0,0,0
@@ -78,6 +78,7 @@ s,t,u,v,w,x,y,z,10,11,0,12,13,s,14,15
 2r,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 2s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 NAME new years
+EXT 15,13 1 0,13
 PAL 2
 
 ROOM 1
@@ -99,7 +100,8 @@ ROOM 1
 4,4,4,4,4,4,4,4,62,63,64,65,66,67,68,69
 NAME summer 1
 EXT 15,13 2 0,13
-PAL 1
+EXT 0,13 0 15,13
+PAL 3
 
 ROOM 2
 4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
@@ -121,7 +123,7 @@ ROOM 2
 NAME summer 2
 EXT 0,13 1 15,13 FX fade_w
 EXT 15,13 3 0,13
-PAL 1
+PAL 3
 
 ROOM 3
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -143,7 +145,7 @@ a4,0,0,0,0,0,0,0,0,0,0,0,0,a5,5k,5k
 NAME autumn
 EXT 15,13 4 0,13 FX fade_w
 EXT 0,13 2 15,13
-PAL 3
+PAL 2
 
 ROOM 4
 4,6a,a6,a7,a8,a7,a9,a8,a8,aa,ab,ac,ad,ae,af,4
@@ -165,7 +167,7 @@ el,em,en,eo,ep,4,eq,4,4,4,4,er,es,et,4,4
 NAME winter
 EXT 0,13 3 15,13
 EXT 15,13 5 0,13
-PAL 4
+PAL 3
 
 ROOM 5
 4,4,4,3o,ah,eu,ev,ew,ex,ey,ez,f0,br,f1,f2,4
@@ -187,7 +189,7 @@ ij,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
 NAME spring
 EXT 15,13 6 0,13
 EXT 0,13 4 15,13 FX fade_w
-PAL 5
+PAL 3
 
 ROOM 6
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -209,8 +211,7 @@ ku,kv,kw,kx,ky,4,4,4,kz,l0,l1,l2,l3,l4,l5,4
 NAME summer 3
 EXT 0,13 5 15,13 FX fade_w
 END 3 1,6
-END 6 0,6
-PAL 6
+PAL 3
 
 TIL 1
 00000000
@@ -7899,71 +7900,97 @@ SPR A
 00111101
 00100100
 00100100
-POS 0 4,13
+POS 0 5,13
 
 SPR a
 00000000
-00000000
-00011000
-00100100
-00100100
-00011000
+00100010
+00010100
+00001000
+00010100
+00100010
 00000000
 00000000
 >
 00000000
+00100010
+00010100
+00001000
+00010100
+00100010
 00000000
-01011010
-00100100
-00100100
-01011010
 00000000
-00000000
-NAME cat
+NAME room 1 sprite
 DLG 0
 POS 0 8,12
 
 SPR b
 11111111
-11111111
-11100111
-11011011
-11011011
-11100111
+11011101
+11101011
+11110111
+11101011
+11011101
 11111111
 11111111
 >
 11111111
-11111011
-10100111
-11011011
-11011011
-11100101
-11011111
+11011101
+11101011
+11110111
+11101011
+11011101
 11111111
+11111111
+NAME room 2 sprite
 DLG 4
 POS 1 8,13
 
 SPR c
 11111111
-11111111
-11100111
-11011011
-11011011
-11100111
+11011101
+11101011
+11110111
+11101011
+11011101
 11111111
 11111111
 >
 11111111
-11111011
-10100111
-11011011
-11011011
-11100101
-11011111
+11011101
+11101011
+11110111
+11101011
+11011101
 11111111
+11111111
+NAME room 3 sprite
 DLG 5
 POS 2 8,12
+
+SPR d
+11100111
+11100111
+11100111
+01000011
+10000001
+11000010
+11011011
+11011011
+NAME black on white
+
+SPR e
+00000000
+00100010
+00010100
+00001000
+00010100
+00100010
+00000000
+00000000
+NAME room 4 sprite
+DLG 6
+POS 3 11,15
 
 ITM 0
 00000000
@@ -7975,7 +8002,6 @@ ITM 0
 00011000
 00000000
 NAME tea
-DLG 1
 
 ITM 1
 00000000
@@ -7987,7 +8013,6 @@ ITM 1
 00010000
 00011000
 NAME key
-DLG 2
 
 DLG 0
 """
@@ -7996,22 +8021,14 @@ How can I possibly bear this?
 """
 NAME cat dialog
 
-DLG 1
-You found a nice warm cup of tea
-NAME tea dialog
-
-DLG 2
-A key! {wvy}What does it open?{wvy}
-NAME key dialog
-
 DLG 3
-
+The End (or maybe the start of something new).
 
 DLG 4
 """
 Summer stretches its golden paws across my windowsill.
 Warm cat of life.
-I approach it fast and uncaring, pulling the blinds shut with a clack.
+I approach it fast and uncaring, pulling the blinds shut with a clack.{exit "2" 7 12}
 """
 NAME sprite b dialog
 
@@ -8024,8 +8041,20 @@ I only need to feel close to you.
 NAME sprite c dialog
 
 DLG 6
-The end, and a beginning. <3
-NAME ending 1
+"""
+In Autumn the ghosts feel close by.
+Patterns of you flecked through the orange-red hues of the leaves falling from from
+my garden's oak trees.
+I watch your urn sitting still on my cabinet.
+Ceramic-hard solitude of loss.
+I crack, and turn away.
+The white-hot sun casts a momentary shadow by my window,
+and I can see you, wavering, like a desert mirage.
+Desperate and aching, I pull myself towards you
+but always you are
+gone, gone gone.
+"""
+NAME sprite e dialog
 
 VAR a
 42
